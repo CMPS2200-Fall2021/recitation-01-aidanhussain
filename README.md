@@ -42,14 +42,15 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 - [ ] 4. Describe the worst case input value of `key` for `linear_search`? for `binary_search`? 
 
-**TODO: your answer goes here**
+		For linear search and binary search, the worst case input is if the value of array is not in the array.  It would have to search the entire array before returning -1.  If the key is in the array, the worst case for linear search is if the key is at the very end of the array.  The worst case for binary search would be if the key is in the middle of one of the two sides of the list.
 
 - [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`? 
+		For linear search, the best case is if the key is the first element of the array.  For binary search, it is if the key is the midpoint.  
 
 **TODO: your answer goes here**
 
-- [ ] 6. Complete the `time_search` function to compute the running time of a search function. Note that this is an example of a "higher order" function, since one of its parameters is another function.
-
+- [ ] 6. Complete the `time_search` function to compute the running time of a search function. Note that this is an example of a "higher order" function, since one
+	
 - [ ] 7. Complete the `compare_search` function to compare the running times of linear search and binary search. Confirm the implementation by running `pytest main.py::test_compare_search`, which contains some simple checks.
 
 - [ ] 8. Call `print_results(compare_search())` and paste the results here:
