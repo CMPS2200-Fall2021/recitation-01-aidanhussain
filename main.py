@@ -28,20 +28,17 @@ def binary_search(mylist, key):
 def _binary_search(mylist, key, left, right):
 
 
-    mid = (int((right-left) / 2)) + left
-    print(mid)
+    mid = ((right-left) // 2) + left
+
     if right < left:
         return -1
     if key == mylist[mid]:
-        return key
+        return mid
     elif key < mylist[mid]:
-        print("smaller")
-        _binary_search(mylist, key, 0, mid)
+        return _binary_search(mylist, key, 0, mid)
     else:
-        print("bigger")
-        _binary_search(mylist, key, mid+1, len(mylist)-1)
+        return _binary_search(mylist, key, mid+1, len(mylist)-1)
         
-    
     
     
 	
@@ -73,7 +70,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
     results = []
     
     for size in sizes:
-        lst = list(range(size))
+        lst = list(range(int(size)))
         
         linear_time = time_search(linear_search, lst, -1)
         binary_time = time_search(binary_search, lst, -1)
@@ -82,7 +79,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
         results.append(result)
     return results
             
-
+compare_search()
 
 
 def print_results(results):
@@ -101,4 +98,3 @@ def test_compare_search():
 	assert res[1][1] < 1
     
     
-print(binary_search([1,2,3],3))
